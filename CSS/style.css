@@ -52,31 +52,37 @@ ul {
     background: url(../Images/bg-layer.svg) #f44336bf no-repeat center;
     background-size: cover;
     position: relative;
+    padding-top: 63.2px;
 }
-#landing header {
+header {
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    background-color: transparent;
+    z-index: 999
+}
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
-    position: sticky;
-    top: 0
 }
-#landing header .logo {
+    header .logo {
     display: flex;
     gap: 10px;
     align-items: center;
 }
-#landing header .logo img {
+header .logo img {
     width: 40px;
     background-color: var(--main-color);
     border-radius: 50%;
 }
-#landing header .logo span {
+header .logo span {
     font-size: 1.3rem;
     font-weight: bold;
     color: var(--main-color)
 }
-#landing nav ul {
+header nav ul {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -90,31 +96,30 @@ ul {
     transform: translateY(-500px);
     transition: var(--main-transition);
 }
-#landing nav > img {
+header nav > img {
     width: 40px;
     border-radius: 5px;
 }
-#landing nav > img:hover + ul {
+header nav > img:hover + ul {
     transform: translateY(0);
 }
-#landing nav ul a,
-#landing nav ul li:last-child {
+header nav ul a,
+header nav ul li:last-child {
     display: block;
     color: var(--main-color);
     padding: 15px;
     border-radius: 8px;
     font-size: 1.2rem;
 }
-#landing nav ul li:last-child {
+header nav ul li:last-child {
     color: #bfbcbc;
     font-size: 0.8rem;
 }
-#landing nav ul a:hover,
-#landing nav ul a.active {
+header nav ul a:hover,
+header nav ul a.active {
     background-color: #cd7985;
 }
 #landing main {
-    margin-top: 20px;
     text-align: center;
     display: flex;
     flex-direction: row-reverse;
@@ -254,7 +259,6 @@ footer p a:hover::before,
 footer p a:hover::after {
     display: block;
 }
-
 /* End Footer */
 
 
@@ -264,25 +268,31 @@ footer p a:hover::after {
     .container {
         width: 750px;
     }
-    #landing nav > img {
+    header .logo img {
+        width: 45px;
+    }
+    header .logo span {
+        font-size: 1.4rem;
+    }
+    header nav > img {
         display: none;
     }
-    #landing nav ul {
+    header nav ul {
         position: static;
         flex-direction: row;
         padding: 0;
         background-color: transparent;
         transform: translateY(0);
     }
-    #landing nav ul li:last-child {
+    header nav ul li:last-child {
         display: none;
     }
-    #landing nav ul a {
+    header nav ul a {
         padding: 15px;
         color: #e0dfdfd0
     }
-    #landing nav ul a:hover,
-    #landing nav ul a.active {
+    header nav ul a:hover,
+    header nav ul a.active {
         background-color: transparent;
         color: var(--main-color)
     }
@@ -309,7 +319,7 @@ footer p a:hover::after {
     .container{
         width: 1170px;
 	}
-    #landing nav ul a {
+    header nav ul a {
         font-size: 1.3rem;
     }
 }
