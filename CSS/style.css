@@ -1,0 +1,325 @@
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+::selection {
+    background-color: #000;
+    color: var(--mainColor);
+}
+::-webkit-scrollbar {
+    width: 0.6rem;
+}
+::-webkit-scrollbar-track {
+    background-color: #dedadca8;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #f44336bf;
+}
+/* End Global Rules */
+
+/* Start Variables */
+:root {
+    --main-color: #fff;
+    --main-transition: 0.3s
+}
+/* End Variables */
+
+/* Start Components */
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+/* End Components */
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#landing {
+    height: 100vh;
+    min-height: 700px;
+    background: url(../Images/bg-layer.svg) #f44336bf no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+#landing header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    position: sticky;
+    top: 0
+}
+#landing header .logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#landing header .logo img {
+    width: 40px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+}
+#landing header .logo span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--main-color)
+}
+#landing nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: #1d1d1d;
+    padding: 20px;
+    transform: translateY(-500px);
+    transition: var(--main-transition);
+}
+#landing nav > img {
+    width: 40px;
+    border-radius: 5px;
+}
+#landing nav > img:hover + ul {
+    transform: translateY(0);
+}
+#landing nav ul a,
+#landing nav ul li:last-child {
+    display: block;
+    color: var(--main-color);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+#landing nav ul li:last-child {
+    color: #bfbcbc;
+    font-size: 0.8rem;
+}
+#landing nav ul a:hover,
+#landing nav ul a.active {
+    background-color: #cd7985;
+}
+#landing main {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 30px;
+}
+#landing .info  {
+    width: 100%;
+    max-width: 500px;
+}
+#landing main h1 {
+    font-size: 2.7rem;
+    color: #e3c437;
+    margin: 0;
+}
+#landing main .download {
+    width: 140px;
+}
+#landing main .download a {
+    display: block;
+    margin-bottom: 10px;
+    background-color: #c9b11580;
+    border-radius: 10px;
+    padding: 8px;
+    transition: var(--main-transition, 0.3s);
+}
+#landing main .download a:hover {
+    background-color: #dcc113;
+}
+#landing main .download img {
+    width: 100%;
+    height: 100%;
+}
+#landing main .download a:first-of-type {
+    animation: animated-button 5s infinite linear;
+}
+@keyframes animated-button {
+    0%,100% {
+        transform: scale(1.1, 1.1);
+    }
+    50% {
+        transform: scale(0.9, 0.9);
+    }
+}
+#landing .waves {
+    width: 100%;
+    height: 225px;
+    background: url(../Images/bg-wave.png) no-repeat;
+    background-size: cover;
+    animation: waves 15s infinite linear;
+    position: absolute;
+    bottom: 0;
+}
+#landing .waves::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 225px;
+    background: url(../Images/bg-wave.png);
+    animation: opposite-waves 15s infinite linear;
+    opacity: 0.3
+}
+@keyframes waves {
+    0%,100% {
+        background-position: -340px;
+    }
+    50% {
+        background-position: 5px;
+    }
+}
+@keyframes opposite-waves {
+    0%,100% {
+        background-position: 5px;
+    }
+    50% {
+        background-position: -340px;
+    }
+}
+/* Start Footer */
+footer {
+    padding-top: 70px;
+    padding-bottom: 25px;
+    text-align: center;
+    color: #6b0569;
+    font-size: 1rem;
+}
+footer p {
+    margin-bottom: 10px;
+}
+footer p span,
+footer p a {
+    color: #6b0569;
+    font-weight: bold;
+}
+footer p a {
+    transition: 0.3s linear;
+    position: relative;
+}
+footer p a:hover {
+    color: rgb(255, 0, 234)
+} 
+footer p a::before,
+footer p a::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+footer a::before {
+    content: attr(title);
+    width: 110px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 5px;
+    background-color: #6b0569;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 1rem;
+    top: -45px;
+}
+footer a:last-of-type:before {
+    width: 150px
+}
+footer p a::after {
+    content: "";
+    border: 10px solid transparent;
+    border-top-color: #6b0569;
+    top: -11px
+}
+footer p a:hover::before,
+footer p a:hover::after {
+    display: block;
+}
+
+/* End Footer */
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+    #landing nav > img {
+        display: none;
+    }
+    #landing nav ul {
+        position: static;
+        flex-direction: row;
+        padding: 0;
+        background-color: transparent;
+        transform: translateY(0);
+    }
+    #landing nav ul li:last-child {
+        display: none;
+    }
+    #landing nav ul a {
+        padding: 15px;
+        color: #e0dfdfd0
+    }
+    #landing nav ul a:hover,
+    #landing nav ul a.active {
+        background-color: transparent;
+        color: var(--main-color)
+    }
+    #landing main {
+        margin-top: 20px;
+    }
+}
+
+/* Large devices (laptops, 992px and up) */
+@media(min-width:992px){
+    .container{
+        width: 970px;
+	}
+    footer {
+        font-size: 1.1rem;
+    }
+    #landing .info  {
+        max-width: 700px;
+    }
+}
+
+/* X-Large devices (desktops, 1200px and up) */
+@media(min-width:1200px){
+    .container{
+        width: 1170px;
+	}
+    #landing nav ul a {
+        font-size: 1.3rem;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media(min-width:1400px){
+    .container{
+        width: 1370px;
+	}
+}
+
+
+
